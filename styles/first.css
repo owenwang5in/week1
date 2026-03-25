@@ -23,4 +23,10 @@
     p {
         color: black;
     }
+
+    .piglet {
+        background-color: pink;
+        color: black;
+        padding: 25px;
+    }
 }

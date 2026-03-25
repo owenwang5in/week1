@@ -8,21 +8,29 @@
 </head>
 
 <body id="light">
-    <button onclick="console.log('dark'); document.body.id = 'dark'"">
-        Dark mode
-    </button>
-    <button onclick=" console.log('light'); document.body.id='light'"">
+    <button onclick="console.log('☀️'); document.body.id='light'">
         Light mode
     </button>
+    <button onclick="console.log('🌙'); document.body.id='dark'">
+        Dark mode
+    </button>
+    <script>
+        if (document.body.id === "light") {
+            document.body.id = "dark";
+        }
+        else {
+            document.body.id = "light";
+        }
+    </script>
 
     <h1>My first webpage</h1>
-    <img src=" ./images/facetime.gif" width="200">
+    <img src="./images/facetime.gif" width="200">
 
     <h2>Full-Stack Curriculum</h2>
     <p>Learn the skills to become a full-stack developer</p>
 
     <h3>Introduction to HTML</h3>
-    <p>HTML represents the content and structure of a webpage</p>
+    <p class="piglet"> HTML represents the content and structure of a webpage</p>
 
     <h3>Introduction to CSS</h3>
     <p>CSS is used to style a webpage</p>
@@ -37,16 +45,37 @@
             happy: false,
         };
         console.log(cat.name);
+
         let family = {
-            dad: "Ba",
-            mom: "Ma",
-            daughter: "Jie",
+            dad: "Dr. Lee",
+            mom: "Shizu Sensei",
+            children: "Jimmy & Yiler",
             pet: cat,
         };
         console.log(family);
         family.pet.happy = true;
+
         console.log(console);
+
+        let mood = prompt("How are you feeling?");
+        if (mood === "sleepy") {
+            alert("WAKE UP");
+        }
+        
+        if (mood !== "sleepy") {
+            alert("Oh! You are feeling " + mood + ".");
+        }
+
+        if (mood === "queencard") {
+            alert("I'm hot");
+        }
+        console.log(mood);
     </script>
+
+    <footer>
+        <p class="piglet"> 3/12/2026</p>
+        <p>Owen Wang</p>
+    </footer>
 </body>
 
 </html>
