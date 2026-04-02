@@ -8,18 +8,26 @@
 </head>
 
 <body id="light">
-    <button onclick="console.log('☀️'); document.body.id='light'">
-        Light mode
-    </button>
-    <button onclick="console.log('🌙'); document.body.id='dark'">
+    <button id="color-mode" onclick="changeColors();">
         Dark mode
     </button>
+
+    <button onclick="howAreYou();">
+        How Are You?
+    </button>
+
     <script>
-        if (document.body.id === "light") {
-            document.body.id = "dark";
-        }
-        else {
-            document.body.id = "light";
+        const colorModeButton = document.querySelector("#color-mode");
+        function changeColors() {
+            if (document.body.id === "light") {
+                console.log("🌙");
+                document.body.id = "dark";
+                colorModeButton.textContent = "Light mode";
+            } else {
+                console.log("☀️");
+                document.body.id = "light";
+                colorModeButton.textContent = "Dark mode";
+            }
         }
     </script>
 
@@ -27,16 +35,18 @@
     <img src="./images/facetime.gif" width="200">
 
     <h2>Full-Stack Curriculum</h2>
-    <p>Learn the skills to become a full-stack developer</p>
+    <p class="piglet">Learn the skills to become a full-stack developer</p>
 
     <h3>Introduction to HTML</h3>
-    <p class="piglet"> HTML represents the content and structure of a webpage</p>
+    <p> HTML represents the content and structure of a webpage</p>
 
     <h3>Introduction to CSS</h3>
     <p>CSS is used to style a webpage</p>
 
     <h3>Introduction to Javascript</h3>
     <p>JavaScript adds interactivity to a webpage</p>
+
+    <img src="./images/mao mao.png" width="200">
 
     <script>
         let cat = {
@@ -57,24 +67,39 @@
 
         console.log(console);
 
-        let mood = prompt("How are you feeling?");
-        if (mood === "sleepy") {
-            alert("WAKE UP");
-        }
-        
-        if (mood !== "sleepy") {
-            alert("Oh! You are feeling " + mood + ".");
+        function howAreYou() {
+            let feelings = prompt("How are you feeling?");
+            respond(feelings);
         }
 
-        if (mood === "queencard") {
-            alert("I'm hot");
+        function respond(mood) {
+            if (mood === "sleepy") {
+                alert("WAKE UP");
+            } else {
+                alert("Oh! You are feeling " + mood + ".");
+            }
         }
-        console.log(mood);
+
+        console.log("mood", typeof mood);
+        console.log("hi");
+        if (true) {
+            let insideIf = "yep";
+            console.log(typeof insideIf);
+        }
+
+        function addTwo(value) {
+            console.log(value + 2);
+            return value + 2;
+        }
+        addTwo(5);
+
+        let result = addTwo(9);
+        console.log("result", result);
     </script>
 
     <footer>
-        <p class="piglet"> 3/12/2026</p>
-        <p>Owen Wang</p>
+        <p>3/12/2026</p>
+        <p class="piglet">Owen Wang</p>
     </footer>
 </body>
 
